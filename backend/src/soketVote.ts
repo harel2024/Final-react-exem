@@ -11,12 +11,9 @@ export const StartSocket = () => {
         });
         io.on('connection', (socket) => {
             console.log('User connected');
-            socket.on("ping", (msg) => {
-                console.log("ping received from client:", msg);
+            socket.on("hello", (msg) => {
+                console.log("hello from client function work");
             });
-            setInterval(() => {
-                socket.emit("hello");
-            }, 1000);
         });
         socketOn = true;
     }

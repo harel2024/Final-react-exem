@@ -1,0 +1,79 @@
+/* עיצוב כללי */
+.candidate-list-container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.candidate-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* כרטיס מועמד */
+.candidate-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.candidate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* תמונה */
+/* .candidate-card img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+} */
+.candidate-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* ממלא את התמונה לפי המסגרת ושומר על הפרופורציות */
+    border-radius: 50%; /* אם רוצים להציג את התמונות כעיגול */
+}
+
+
+/* שם המועמד */
+.candidate-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* הצבעות */
+.candidate-card p {
+    font-size: 1em;
+    color: #777;
+}
+
+.candidate-card .votes {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* בקובץ Login.css */
+.logout-button {
+    background-color: #d9534f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.logout-button:hover {
+    background-color: #c9302c;
+}
+
