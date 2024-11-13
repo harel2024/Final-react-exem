@@ -1,19 +1,24 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema, Document } from 'mongoose';
+import { Organization } from './Organizations';
 
-export interface IUser extends Document {
+// מודל עבור User
+export interface User extends Document {
   username: string;
   password: string;
-  isAdmin: boolean;
-  hasVoted: boolean;
-  votedFor: mongoose.Types.ObjectId | null;
+  organization: Organization;
 }
 
-const UserSchema: Schema = new Schema({
+const userSchema: Schema = new Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  isAdmin: { type: Boolean, default: false },
-  hasVoted: { type: Boolean, default: false },
-  votedFor: { type: mongoose.Schema.Types.ObjectId, ref: "Candidate", default: null }
+  organization: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Organization',
+    required: true
+  }
 });
 
-export default mongoose.model<IUser>("User", UserSchema);
+const UserModel = mongoose.model<User>('User', userSchema);
+
+export default UserModel;
+

@@ -90,37 +90,6 @@ export const addCandidates = async (req: Request, res: Response) => {
 };
 
 
-// בקובץ הבקר של המועמדים בשרת
-// export const voteForCandidate = async (req: Request, res: Response) => {
-  
 
-
-
-
-
-
-
-//   const userId = req.user._id; // יש לוודא שמזהה המשתמש מאומת דרך ה-token
-//   const { candidateId } = req.body;
-
-//   try {
-//     const candidate = await Candidate.findById(candidateId);
-//     if (!candidate) return res.status(404).json({ message: "Candidate not found" });
-
-//     // בדיקה אם המשתמש כבר הצביע
-//     if (candidate.voters.includes(userId)) {
-//       return res.status(400).json({ message: "User has already voted for this candidate" });
-//     }
-
-//     // הוספת הצבעה
-//     candidate.votes += 1;
-//     candidate.voters.push(userId); // שמירת מזהה המשתמש
-//     await candidate.save();
-
-//     res.json({ votes: candidate.votes });
-//   } catch (error) {
-//     res.status(500).json({ message: "Error voting for candidate", error });
-//   }
-// };
 
 
