@@ -1,6 +1,7 @@
 // routes/userRoutes.ts
 import express from "express";
-import { registerUser, loginUser,addCandidates } from '../controllers/userController'
+import { loginUser, registerUser } from '../controllers/userController'
+import { authenticateToken } from "../middleware/authMiddleware";
 
 const router = express.Router();
 
@@ -8,13 +9,14 @@ const router = express.Router();
 router.post("/register", registerUser);
 
 // מסלול התחברות
+// authenticateToken,
 router.post("/login", loginUser);
 
 // מסלול קבלת מועמדים
 // router.get("/candidates", getCandidates);
 
 //הכנסת מועמדים דיפולטיביים
-router.post("/add", addCandidates);
+// router.post("/add", addCandidates);
 
 
 

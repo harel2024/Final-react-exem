@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { connectToMongoDB } from "./DAL/db"; // connectToMongoDB from "./DAL/db";
 import routerUsers from "./routes/userRoutes";
-import routerCandidates from "./routes/candidateRoutes";
+// import routerCandidates from "./routes/candidateRoutes";
 
 
 dotenv.config();
@@ -21,7 +21,7 @@ connectToMongoDB();
 // Routes
 
 app.use("/api", routerUsers);
-app.use("/api", routerCandidates);
+// app.use("/api", routerCandidates);
 
 
 

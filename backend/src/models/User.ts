@@ -1,24 +1,70 @@
 import mongoose, { Schema, Document } from 'mongoose';
-import { Organization } from './Organizations';
+import { IOrganization } from './Organizations';
+import { IMissile } from './Missiles';
 
-// מודל עבור User
-export interface User extends Document {
+// הגדרת ממשק User
+export interface IUser extends Document {
   username: string;
   password: string;
-  organization: Organization;
+  organization: string;
+  area: string;
+  missiles: IMissile[];
+
 }
 
-const userSchema: Schema = new Schema({
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
+const userSchema = new Schema<IUser>({
+  username: {
+    type: String,
+    required: true,
+    unique: true,  
+  },
+  password: {
+    type: String,
+    required: true,
+  },
   organization: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Organization',
-    required: true
-  }
+    type: String,
+    required: true,
+  },
+  area: {
+    type: String,
+    required: true,
+  },
+  missiles: {
+    type: [
+      {name: {
+        type: String,
+        required: true,
+      },
+        description:{
+        type: String,
+        required: true,
+      },
+        speed: {
+          type: Number,
+          required: true,
+        },
+        intercepts:{
+          type: [String],
+          required: true,
+        },
+        price: {
+          type: Number,
+          required: true,
+        },
+        amount:{
+          type:Number,
+          required: false
+        }
+      }
+    ]
+
+  },
+ 
+  
 });
 
-const UserModel = mongoose.model<User>('User', userSchema);
+const User = mongoose.model<IUser>('User', userSchema);
 
-export default UserModel;
+export default User;
 
