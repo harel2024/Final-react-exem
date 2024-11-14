@@ -9,6 +9,7 @@ interface Props {
     user: IUser
 }
 
+
 const ShowWarms: React.FC<Props> = ({user}) => {
   return (
     <div className="table-container">
@@ -18,6 +19,7 @@ const ShowWarms: React.FC<Props> = ({user}) => {
             <tr>
                 <th>שם</th>
                 <th>כמות</th>
+               
                 <th>סטטוס</th>            
                 <th>שיגור</th>
             </tr>
@@ -27,7 +29,9 @@ const ShowWarms: React.FC<Props> = ({user}) => {
                 <tr key={resource.missile?.name}>
                     <td>{resource.missile?.name}</td>
                     <td>{resource.amount}</td>
+                   
                     <td>{"לא זמין"}</td>
+                   
                     <td>
                         <button className="launch-button" onClick={async () => {
                                 await StartSocket().StartAttack(resource.missile!._id!, user.username);
@@ -39,6 +43,12 @@ const ShowWarms: React.FC<Props> = ({user}) => {
             ))}
         </tbody>
     </table>
+    <select onChange={(e) => console.log(e.target.value)}>
+        <option value="North">North</option>
+        <option value="South">South</option>
+        <option value="East">East</option>
+        <option value="West">West</option>
+    </select>
 </div>
 
   )
