@@ -1,52 +1,29 @@
-
-import { Routes, Route } from "react-router-dom";
-import PrivateRoute from "./utils/PrivateRoute";
-// import Layout from "./components/Layout/Layout";
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
-import Defense from "./pages/defense/Defense";
-import Atteck from "./pages/atteck/Atteck";
-
-
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import LoginPage from './pages/loginPage/LoginPage'
+import RegisterPage from './pages/registerPage/RegisterPage'
+import WarRoom from './pages/WareRoom/WarRoom'
 
 function App() {
+
   return (
-  
-    // <Layout>   
-        <Routes>
-          <Route path="/" element={<Login/>} />
-          <Route path="/Register" element={<Register/>} />
-          <Route path="/Defense" element={<PrivateRoute component={<Defense/>} />} />
-          <Route path="/Atteck" element={<PrivateRoute component={<Atteck/>} />} />
-       
-          {/* <Route  path="/floor/:index"  element={ <PrivateRoute>  <Floor /> </PrivateRoute> } /> */}
-       
-       </Routes>
-    //  </Layout>  
-              
-             
-           
-         
-      
-  
-  );
+    <>
+    
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/RegisterPage" element={<RegisterPage />} />
+        <Route path="/test" element={<WarRoom />} />
+
+      </Routes>
+    </>
+  )
 }
 
-export default App;
+export default App
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{/* <Route path="/candidate" element={<PrivateRoute component={<VotePage/>}/> } /> */ }
+{/* <Route path="/RegisterPage" element={<RegisterPage/>} /> */ }

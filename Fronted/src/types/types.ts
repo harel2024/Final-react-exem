@@ -1,14 +1,19 @@
-export interface Iuser {
+export interface IUser {
     username: string;
     password: string;
-    isAdmin?: boolean;
-    hasVoted?: boolean;
-    votedFor?: string | null;
+    organization: string;
+    location?: string;
+    resources?: {
+        missile?: IMission;
+        amount: number;
+    }[];
+    budget?: number;
 }
-
-
-export interface Icandidate {
+export interface IMission {
+    _id?: string;
     name: string;
-    image: string | null;
-    votes?: number |null;
+    description: string;
+    speed: Number;
+    intercepts: string[];
+    price: Number;
 }

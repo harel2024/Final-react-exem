@@ -1,52 +1,6 @@
-import mongoose, { Schema, Document } from 'mongoose';
+const missiles =
 
-// הגדרת ממשק missile
-export interface IMissile extends Document {
-    name: string;
-    description: string;
-    speed: number;
-    intercepts: string[];
-    price: number;
-    amount?:Number
-}
-
-const missileSchema = new Schema<IMissile>({
-    name: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
-        required: true,
-    },
-    speed: {
-        type: Number,
-        required: true,
-    },
-    intercepts: {
-        type: [String],
-        required: true,
-    },
-    price: {
-        type: Number,
-        required: true,
-    },
-    amount:{
-        type:Number,
-        required: false
-    }
-});
-
-const Missile = mongoose.model<IMissile>('Missile', missileSchema);
-
-export default Missile;
-
-
-
-
-
-
-export const missiles = [
+[
     {
       "name": "Iron Dome",
       "description": "A mobile all-weather air defense system designed to intercept and destroy short-range rockets and artillery shells.",
@@ -129,6 +83,8 @@ export const missiles = [
       "description": "A cruise missile developed by regional forces for longer-range precision attacks.",
       "speed": 14,
       "intercepts": [],
-      "price": 40000
-    }
-  ]
+      "price": 40000
+    }
+  ]  
+
+  export default missiles
