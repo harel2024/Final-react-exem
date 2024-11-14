@@ -114,30 +114,3 @@
     color: #f7b733; /* Military yellow arrow */
     pointer-events: none;
 }
-
-
-
-
-.form-select {
-    width: 100%;
-    padding: 8px 12px;
-    margin-bottom: 15px;
-    border: 1px solid #4f545c;
-    background-color: #1e1f22; /* Dark background */
-    color: #f7b733; /* Military yellow text */
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 4px;
-    appearance: none; /* Removes default dropdown arrow */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-    position: relative;
-    padding-right: 30px; /* Space for custom arrow icon */
-}
-
-.form-select:focus {
-    border-color: #f7b733;
-    outline: none;
-    box-shadow: 0 0 5px rgba(247, 183, 51, 0.5);
-}

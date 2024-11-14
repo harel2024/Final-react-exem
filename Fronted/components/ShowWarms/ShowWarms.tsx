@@ -1,5 +1,8 @@
 import React from 'react'
 import { IUser } from '../../src/types/types'
+// import "./ShowWarms.css";
+
+
 
 interface Props {
     user: IUser
@@ -7,19 +10,32 @@ interface Props {
 
 const ShowWarms: React.FC<Props> = ({user}) => {
   return (
-    <div>
-        <h1>Show w</h1>
-        <div>
+    <div className="table-container">
+        <h2>{user.organization}-{user.username}</h2>
+    <table className="resource-table">
+        <thead>
+            <tr>
+                <th>שם</th>
+                <th>כמות</th>
+                <th>סטטוס</th>
+                <th>שיגור</th>
+            </tr>
+        </thead>
+        <tbody>
             {user.resources?.map((resource) => (
-                <div>
-                    <h4>{resource.missile?.name}</h4>
-                    <p>{resource.amount}</p>
-                </div>
+                <tr key={resource.missile?.name}>
+                    <td>{resource.missile?.name}</td>
+                    <td>{resource.amount}</td>
+                    <td>{"לא זמין"}</td>
+                    <td>
+                        <button className="launch-button" onClick={() => {}}>שיגור</button>
+                    </td>
+                </tr>
             ))}
-        </div>
+        </tbody>
+    </table>
+</div>
 
-      
-    </div>
   )
 }
 

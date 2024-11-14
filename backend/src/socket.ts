@@ -8,7 +8,7 @@ export const StartSocket = () => {
 
         const io = new Server(5001, {
             cors: {
-                origin: "*", // אפשר לציין URL ספציפי במקום "*"
+                origin: "*", 
                 methods: ["GET", "POST"],
             }
         });

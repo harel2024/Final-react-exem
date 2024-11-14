@@ -1,8 +1,8 @@
 import React from "react";
 import { useForm } from "../../hooks/useForm";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser, registerUser } from "../../store/userSlice";
-import "../loginPage/LoginPage.css";
+import {  registerUser } from "../../store/userSlice";
+import "./register.css";
 import { Navigate, useNavigate } from "react-router-dom";
 
 
@@ -103,11 +103,14 @@ const Form: React.FC = () => {
         <label className="form-label">
             Organization:
             <select
+             className = "form-select"
+            
                 name="organization"
                 aria-label="Select your organization"
                 onChange={(e) => {
                     setOrganization(e.target.value);
                     formData.organization = e.target.value;
+                   
                 }}
             >
                 <option value="select">Select Organization</option>
@@ -127,6 +130,7 @@ const Form: React.FC = () => {
                     onChange={(e) => {
                         formData.location = e.target.value;
                     }}
+                    className = "form-select"
                 >
                     <option value="North">North</option>
                     <option value="South">South</option>

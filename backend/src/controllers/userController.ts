@@ -39,7 +39,7 @@ export const register = async (req: Request, res: Response) => {
                 }
             }));
 
-            // יצירת המשתמש לאחר שכל ה-resources התווספו
+         
             const UserAdded = await Users.create(user); 
             res.status(201).json({ newUser: UserAdded, success: true });
             return;

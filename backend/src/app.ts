@@ -26,7 +26,7 @@ app.use(cors());
 
 // Routes
 app.use('/api', userRouter);
-// app.use('/api/candidates', candidateRouter);
+
 
 
 app.listen(PORT, () => {

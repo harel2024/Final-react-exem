@@ -1,0 +1,86 @@
+.table-container {
+    background-color: #181818; /* רקע כהה מאוד */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* הצללה אפלולית */
+    padding: 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.resource-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* גופן מודרני וקריא */
+}
+
+.resource-table th, .resource-table td {
+    padding: 15px;
+    border: 1px solid #3c3c3c; /* גבולות אפלים ורכים */
+    font-size: 18px;
+    color: #e0e0e0; /* טקסט בהיר */
+}
+
+.resource-table th {
+    background-color: #2c2c2c; /* צבע כהה לכותרות */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.resource-table td {
+    background-color: #232323; /* צבע כהה אך עדין יותר לתאים */
+}
+
+.resource-table tr:hover {
+    background-color: #3a3a3a; /* צבע מעט בהיר יותר בשורת ריחוף */
+}
+
+.resource-table tr:nth-child(even) {
+    background-color: #2b2b2b; /* רקע כהה לשורות זוגיות */
+}
+
+.resource-table tr:nth-child(odd) {
+    background-color: #232323; /* רקע כהה לשורות אי זוגיות */
+}
+
+.launch-button {
+    background-color: #ff8c00; /* צבע כתום לוהט לשיגור */
+    color: #181818; /* טקסט כהה */
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4); /* הצללה קלה */
+    transition: all 0.3s ease-in-out;
+}
+
+.launch-button:hover {
+    background-color: #e07b00; /* שינוי צבע כתום כהה בעת ריחוף */
+    box-shadow: 0 6px 12px rgba(255, 140, 0, 0.5); /* הצללה חזקה יותר */
+}
+
+.launch-button:active {
+    background-color: #d66b00; /* שינוי צבע בעת לחיצה */
+    transform: scale(0.98); /* אפקט הקטנה בעת לחיצה */
+}
+
+.resource-table td, .resource-table th {
+    border-left: 2px solid #3c3c3c;
+    border-top: 2px solid #3c3c3c;
+}
+
+.resource-table td:first-child, .resource-table th:first-child {
+    border-left: none;
+}
+
+.resource-table td:last-child, .resource-table th:last-child {
+    border-right: none;
+}
+h2 {
+    color: #e0e0e0; /* טקסט בהיר */
+    text-align: center;
+    margin-bottom: 20px;
+
+}
