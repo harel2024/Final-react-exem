@@ -50,8 +50,8 @@ const Form: React.FC = () => {
                     />
                 </label>
                 <div className="form-buttons">
-                    <button onClick={() => navigate("/RegisterPage")} className="form-button">Register </button>
-                    <button type="submit" className="form-button">Submit</button>
+                    <button onClick={() => navigate("/RegisterPage")} className="form-button">Sign up </button>
+                    <button type="submit" className="form-button">Sign in</button>
 
                 </div>
             </form>

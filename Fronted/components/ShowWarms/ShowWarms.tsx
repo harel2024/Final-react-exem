@@ -1,5 +1,6 @@
 import React from 'react'
 import { IUser } from '../../src/types/types'
+import { StartSocket } from '../../src/socketManeger'
 // import "./ShowWarms.css";
 
 
@@ -17,7 +18,7 @@ const ShowWarms: React.FC<Props> = ({user}) => {
             <tr>
                 <th>שם</th>
                 <th>כמות</th>
-                <th>סטטוס</th>
+                <th>סטטוס</th>            
                 <th>שיגור</th>
             </tr>
         </thead>
@@ -28,7 +29,11 @@ const ShowWarms: React.FC<Props> = ({user}) => {
                     <td>{resource.amount}</td>
                     <td>{"לא זמין"}</td>
                     <td>
-                        <button className="launch-button" onClick={() => {}}>שיגור</button>
+                        <button className="launch-button" onClick={async () => {
+                                await StartSocket().StartAttack(resource.missile!._id!, user.username);
+                                //@ts-ignore
+                                setTimeout(async () => dispatch(await loginUser(user)), 500);
+                            }}>שיגור</button>
                     </td>
                 </tr>
             ))}
@@ -40,3 +45,4 @@ const ShowWarms: React.FC<Props> = ({user}) => {
 }
 
 export default ShowWarms
+
